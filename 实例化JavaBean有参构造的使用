@@ -1,0 +1,81 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>对JavaBean属性赋值</title>
+</head>
+<body>
+<%--实例化JavaBean有参构造--%>
+<%
+    cn.test.Produce tryA=new cn.test.Produce("手机",1888,2,"深圳XX公司");
+%>
+
+<div>
+    <ul>
+        <li>
+            商品名称:<%=tryA.getName()%>
+        </li>
+        <li>
+            价格:<%=tryA.getPrice()%>(元)
+        </li>
+        <li>
+            数量:<%=tryA.getCount()%>
+        </li>
+        <li>
+            厂址:<%=tryA.getFactoryAdd()%>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+--------------------------------------------------------------------------------------
+//javaBean
+package cn.test;
+
+public class Produce {
+    private String name="昆仑";
+    private double price=50;
+    private int count=10;
+    private String factoryAdd = "今古传奇";
+
+
+    public Produce() { }
+
+    public Produce(String name, double price, int count, String factoryAdd) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+        this.factoryAdd = factoryAdd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
+    public String getFactoryAdd() {
+        return factoryAdd;
+    }
+
+    public void setFactoryAdd(String factoryAdd) {
+        this.factoryAdd = factoryAdd;
+    }
+}
